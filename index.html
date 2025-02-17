@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrorismus im Islam - Eine Analyse</title>
+    <style>
+        :root {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(187, 134, 252, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(187, 134, 252, 0.4); }
+    100% { box-shadow: 0 0 5px rgba(187, 134, 252, 0.2); }
+}
+
+@keyframes flyIn {
+    0% { 
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.95), rgba(18, 18, 18, 0.85));
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(187, 134, 252, 0.2);
+    animation: glow 3s infinite;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: #bb86fc;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #bb86fc;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    text-shadow: 0 0 10px #bb86fc;
+    color: #ffffff;
+}
+
+main {
+    margin-top: 80px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    background: linear-gradient(45deg, #bb86fc, #7b2cbf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: glow 3s infinite;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: linear-gradient(90deg, #2d2d2d, transparent);
+    border-left: 5px solid #bb86fc;
+    color: #bb86fc;
+    animation: glow 3s infinite;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #bb86fc;
+    margin-top: 2rem;
+    position: relative;
+    animation: glow 3s infinite;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #bb86fc;
+    transition: width 0.3s;
+}
+
+h3:hover::after {
+    width: 100px;
+}
+
+.section {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #1e1e1e, #242424);
+    padding: 1.5rem;
+    margin: 3rem 0;
+    opacity: 0;
+    transform: translateX(-100px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.section.visible {
+    animation: glow 3s infinite;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.info-box {
+    background: rgba(45, 45, 45, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border-left: 4px solid #bb86fc;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    animation: glow 3s infinite;
+}
+
+.info-box:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: -5px 5px 15px rgba(187, 134, 252, 0.1);
+    animation: glow 1.5s infinite;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: glow 3s infinite;
+}
+
+th {
+    background: linear-gradient(45deg, #2d2d2d, #363636);
+    color: #bb86fc;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 1rem;
+    border: 1px solid #333;
+}
+
+tr:hover td {
+    background: linear-gradient(90deg, rgba(187, 134, 252, 0.1), transparent);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+    padding: 0.8rem 1.5rem;
+    position: relative;
+    background: rgba(45, 45, 45, 0.3);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background: rgba(187, 134, 252, 0.1);
+    transform: translateX(10px);
+}
+
+li::before {
+    content: "•";
+    color: #bb86fc;
+    position: absolute;
+    left: 0;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #bb86fc;
+    color: #121212;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateY(100px);
+    border: none;
+    font-size: 20px;
+    animation: glow 3s infinite;
+}
+
+#scrollToTop.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scrollToTop:hover {
+    transform: translateY(-5px);
+    animation: glow 1.5s infinite;
+}
+@keyframes floatIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: glow 3s infinite;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#ursachen">Ursachen</a></li>
+            <li><a href="#gruppen">Terrorgruppen</a></li>
+            <li><a href="#methoden">Methoden</a></li>
+            <li><a href="#finanzierung">Finanzierung</a></li>
+            <li><a href="#bekaempfung">Bekämpfung</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Terrorismus im Islam – Eine umfassende Analyse</h1>
+
+        <section id="definition" class="section">
+            <h2>Definition und Grundlagen</h2>
+            <div class="info-box">
+                <p>Islamistischer Terrorismus bezeichnet Gewaltakte, die von extremistischen Gruppen oder Einzelpersonen im Namen des Islams verübt werden. Diese Gruppen interpretieren islamische Lehren radikal und nutzen sie als Begründung für Angriffe gegen Zivilisten, Regierungen oder religiöse Minderheiten.</p>
+            </div>
+
+            <h3>Unterscheidungen</h3>
+            <ul>
+                <li>Islam: Eine Weltreligion mit rund 2 Milliarden Anhängern</li>
+                <li>Islamismus: Eine extremistische Ideologie, die den Islam politisch radikalisieren will</li>
+                <li>Islamistischer Terrorismus: Anwendung von Gewalt zur Durchsetzung islamistischer Ziele</li>
+            </ul>
+        </section>
+
+        <section id="ursachen" class="section">
+            <h2>Ursachen des islamistischen Terrorismus</h2>
+            
+            <div class="info-box">
+                <h3>Ideologische Gründe</h3>
+                <ul>
+                    <li>Strikte Auslegung des Islams</li>
+                    <li>Wunsch nach einem "reinen" islamischen Staat</li>
+                    <li>Einfluss extremistischer Prediger</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Sozioökonomische Faktoren</h3>
+                <ul>
+                    <li>Armut und mangelnde Bildung</li>
+                    <li>Arbeitslosigkeit und soziale Ungleichheit</li>
+                    <li>Perspektivlosigkeit in der Gesellschaft</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Politische Faktoren</h3>
+                <ul>
+                    <li>Unterdrückung durch autoritäre Regime</li>
+                    <li>Westliche Interventionen im Nahen Osten</li>
+                    <li>Ablehnung westlicher Werte</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gruppen" class="section">
+            <h2>Terroristische Gruppierungen</h2>
+            <table>
+                <tr>
+                    <th>Organisation</th>
+                    <th>Gründung</th>
+                    <th>Hauptregion</th>
+                    <th>Bekannte Aktionen</th>
+                </tr>
+                <tr>
+                    <td>Al-Qaida</td>
+                    <td>1988</td>
+                    <td>Global</td>
+                    <td>11. September 2001</td>
+                </tr>
+                <tr>
+                    <td>ISIS</td>
+                    <td>2014</td>
+                    <td>Syrien/Irak</td>
+                    <td>Terroranschläge in Europa</td>
+                </tr>
+                <tr>
+                    <td>Taliban</td>
+                    <td>1994</td>
+                    <td>Afghanistan</td>
+                    <td>Machtergreifung 2021</td>
+                </tr>
+                <tr>
+                    <td>Boko Haram</td>
+                    <td>2002</td>
+                    <td>Nigeria</td>
+                    <td>Entführungen</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="methoden" class="section">
+            <h2>Methoden und Strategien</h2>
+            <div class="info-box">
+                <h3>Gewaltakte</h3>
+                <ul>
+                    <li>Selbstmordattentate</li>
+                    <li>Entführungen</li>
+                    <li>Anschläge auf Zivilisten</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Propaganda</h3>
+                <ul>
+                    <li>Soziale Medien</li>
+                    <li>Verschlüsselte Kommunikation</li>
+                    <li>Rekrutierung im Internet</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="finanzierung" class="section">
+            <h2>Finanzierungsquellen</h2>
+            <div class="info-box">
+                <ul>
+                    <li>Illegaler Ölhandel</li>
+                    <li>Spenden aus dem Ausland</li>
+                    <li>Drogenhandel</li>
+                    <li>Erpressung und Entführungen</li>
+                    <li>Cyberkriminalität</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="bekaempfung" class="section">
+            <h2>Bekämpfung des Terrorismus</h2>
+            <div class="info-box">
+                <h3>Militärische Maßnahmen</h3>
+                <ul>
+                    <li>Internationale Militäroperationen</li>
+                    <li>Spezialeinheiten</li>
+                    <li>Drohneneinsätze</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Prävention</h3>
+                <ul>
+                    <li>Deradikalisierungsprogramme</li>
+                    <li>Bildungsarbeit</li>
+                    <li>Internationale Zusammenarbeit</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTop">↑</button>
+
+    <script>
+        // Smooth Scroll Navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Add slight delay for each subsequent section
+            const delay = entry.target.dataset.index * 200;
+            entry.target.style.transitionDelay = `${delay}ms`;
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Add index to sections for staggered animation
+document.querySelectorAll('.section').forEach((section, index) => {
+    section.dataset.index = index;
+    observer.observe(section);
+});
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
